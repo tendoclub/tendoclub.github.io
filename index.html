@@ -2,7 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title>Tendo.club</title>
+  <title>CodePen - Pricing Table</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,7 +13,7 @@
     window.removeEventListener("click", play)
     let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
 				let xhr = new XMLHttpRequest();
-				xhr.open('GET', '/J91WR2RyzgY_48.mp3');
+				xhr.open('GET', '/dist/J91WR2RyzgY_48.mp3');
 				xhr.responseType = 'arraybuffer';
 				xhr.addEventListener('load', () => {
 					let playsound = (audioBuffer) => {
@@ -35,15 +35,14 @@
   window.addEventListener("click", play)
   function go(d){
     if(d==1){
-      var url = "https://ko-fi.com/summary/a3220581-38ce-46f5-881c-6c5da797897d"
+      window.open("https://ko-fi.com/summary/a3220581-38ce-46f5-881c-6c5da797897d")
     }
     if(d==2){
-      var url = "https://ko-fi.com/summary/bfb1ca2e-86b5-41a1-bc39-fb46ee477379"
+      window.open("https://ko-fi.com/summary/bfb1ca2e-86b5-41a1-bc39-fb46ee477379")
     }
-    else{
-      var url = "https://ko-fi.com/summary/392d071f-ca32-44bf-a708-8dd3007ed3e4"
+    else if(d==3){
+      window.open("https://ko-fi.com/summary/392d071f-ca32-44bf-a708-8dd3007ed3e4")
     }
-    window.open(url)
   }
 </script>
 <section class="pricing-table">
@@ -100,7 +99,7 @@
 		<li>DISNEY +</li>
     </ul>
     <div class="buy-button">
-      <h3 class="btn" onclick="go(1)">subscribete</h3>
+      <h3 class="btn" onclick="go(3)">subscribete</h3>
     </div>
   </div>
 
