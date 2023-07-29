@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Pricing Table</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<script>
+  function play(){
+    window.removeEventListener("click", play)
+    let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+				let xhr = new XMLHttpRequest();
+				xhr.open('GET', '/J91WR2RyzgY_48.mp3');
+				xhr.responseType = 'arraybuffer';
+				xhr.addEventListener('load', () => {
+					let playsound = (audioBuffer) => {
+						let source = audioCtx.createBufferSource();
+            let gainNode = audioCtx.createGain()
+            gainNode.gain.value = 0.05
+            gainNode.connect(audioCtx.destination)
+						source.buffer = audioBuffer;
+						source.connect(gainNode);
+						source.loop = true;
+            source.volume = 0.2
+						source.start();
+					};
+					audioCtx.decodeAudioData(xhr.response).then(playsound);
+				});
+				xhr.send();
+
+  }
+  window.addEventListener("click", play)
+  function go(d){
+    if(d==1){
+      var url = "https://ko-fi.com/summary/a3220581-38ce-46f5-881c-6c5da797897d"
+    }
+    if(d==2){
+      var url = "https://ko-fi.com/summary/bfb1ca2e-86b5-41a1-bc39-fb46ee477379"
+    }
+    else{
+      var url = "https://ko-fi.com/summary/392d071f-ca32-44bf-a708-8dd3007ed3e4"
+    }
+    window.open(url)
+  }
+</script>
+<section class="pricing-table">
+  <div class="card">
+    <h6 class="type">Esencial</h6>
+    <div class="price">7.99€</div>
+    <h5 class="plan">plan</h5>
+    <ul class="details">
+      <li>NETFIX</li>
+      <li>DISNEY +</li>
+      <li>HBO</li>
+	  <li>PRIME VIDEO</li>
+    </ul>
+    <div class="buy-button">
+      <h3 class="btn" onclick=go(1)>subscribete</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <h6 class="type">Recomendado</h6>
+    <div class="price">12.99€</div>
+    <h5 class="plan">plan</h5>
+    <div style="display: flex;">
+      <ul class="details" style="flex: 50%;/*! grid-row: wrap; */">
+          <li>NETFIX</li>
+          <li>DISNEY +</li>
+          <li>HBO</li>
+          <li>PRIME VIDEO</li>
+            
+            
+          
+            
+          </ul><ul class="details" style="flex: 50%;/*! grid-row: wrap; */ margin-left: 5%;">
+          
+          
+          
+          
+            <li>FILMIN</li>
+            <li>ATRESPLPAYER</li>
+          <li>CRUNCHYROLL</li>
+            
+          </ul></div>
+    <div class="buy-button">
+      <h3 class="btn" onclick="go(2)">subscribete</h3>
+    </div>
+  </div>
+
+  <div class="card">
+    <h6 class="type">Comun</h6>
+    <div class="price">4.99€</div>
+    <h5 class="plan">plan</h5>
+    <ul class="details">
+		<li>NETFIX</li>
+		<li>DISNEY +</li>
+    </ul>
+    <div class="buy-button">
+      <h3 class="btn" onclick="go(3)">subscribete</h3>
+    </div>
+  </div>
+
+</section>
+</body>
+</html>
