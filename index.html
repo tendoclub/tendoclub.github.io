@@ -3,11 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title>Tendo.Club - Cuentas</title>
+  <link rel="icon" href="./favicon.jpg">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
   <link rel="stylesheet" href="./style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script></head>
 <body>
+  <style>
+    .swal-modal{
+      text-shadow: none;
+    }
+    .swal-text{
+      text-transform: none;
+    }
+    .swal-footer{
+      right: 21%;
+      position: relative;
+    }
+  </style>
 <script>
   function play(){
     window.removeEventListener("click", play)
@@ -35,13 +48,75 @@
   window.addEventListener("click", play)
   function go(d){
     if(d==1){
-      window.open("https://ko-fi.com/summary/a3220581-38ce-46f5-881c-6c5da797897d")
+      swal("", {
+    title: "Antes de seguir...",
+    text: "Que método de pago quieres usar?",
+    icon: "info",
+    buttons: {
+        withPayment: "Tarjeta💳",
+        withOutPayment: "PayPal💱",
+    }
+})
+.then((value) => {
+    switch (value) {
+
+        case "withPayment":
+            window.open("https://www.buymeacoffee.com/tendo1/membership")
+            break;
+
+        case "withOutPayment":
+            window.open("https://ko-fi.com/summary/a3220581-38ce-46f5-881c-6c5da797897d")
+            break;
+    }
+});
     }
     if(d==2){
-      window.open("https://ko-fi.com/summary/bfb1ca2e-86b5-41a1-bc39-fb46ee477379")
+      swal("", {
+    title: "Antes de seguir...",
+    text: "Que método de pago quieres usar?",
+    icon: "info",
+    buttons: {
+        withPayment: "Tarjeta💳",
+        withOutPayment: "PayPal💱",
+    }
+})
+.then((value) => {
+    switch (value) {
+
+        case "withPayment":
+            window.open("https://www.buymeacoffee.com/tendo1/membership")
+            break;
+
+        case "withOutPayment":
+            window.open("https://ko-fi.com/summary/bfb1ca2e-86b5-41a1-bc39-fb46ee477379")
+            break;
+    }
+});
+
     }
     else if(d==3){
-      window.open("https://ko-fi.com/summary/392d071f-ca32-44bf-a708-8dd3007ed3e4")
+      swal("", {
+    title: "Antes de seguir...",
+    text: "Que método de pago quieres usar?",
+    icon: "info",
+    buttons: {
+        withPayment: "Tarjeta💳",
+        withOutPayment: "PayPal💱",
+    }
+})
+.then((value) => {
+    switch (value) {
+
+        case "withPayment":
+            window.open("https://www.buymeacoffee.com/tendo1/membership")
+            break;
+
+        case "withOutPayment":
+            window.open("https://ko-fi.com/summary/392d071f-ca32-44bf-a708-8dd3007ed3e4")
+            break;
+    }
+});
+
     }
   }
 </script>
